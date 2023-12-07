@@ -1,0 +1,153 @@
+<?php
+
+use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\PosteController;
+use App\Http\Controllers\EmployeController;
+use App\Http\Controllers\RealisationController;
+use App\Http\Controllers\ServiceController;
+use App\Http\Controllers\AnnonceController;
+use App\Http\Controllers\RecrutementController;
+use App\Http\Controllers\EsController;
+use App\Http\Controllers\CommentaireController;
+use App\Http\Controllers\OptionController;
+use App\Models\Service;
+use App\Models\Realisation;
+
+/*
+|--------------------------------------------------------------------------
+| Web Routes
+|--------------------------------------------------------------------------
+|
+| Here is where you can register web routes for your application. These
+| routes are loaded by the RouteServiceProvider and all of them will
+| be assigned to the "web" middleware group. Make something great!
+|
+*/
+
+Route::get('/', function () {
+    $services = Service::all();
+    return view('Page.index',[
+        'services' => $services
+    ]);
+})->name('index');
+
+Route::get('/dashyout', function () {
+    return view('dashyout');
+})->name('dashyout');
+
+
+Route::get('/about', function () {
+    return view('Page.about');
+})->name('about');
+
+Route::get('/annonce', function () {
+    return view('Page.annonce');
+})->name('annonce');
+
+Route::get('/contact', function () {
+    return view('Page.contact');
+})->name('contact');
+
+Route::get('/portfolio', function () {
+    $services = Service::all();
+    $realisations = Realisation::all();
+    return view('Page.portfolio',[
+        'services' => $services,
+        'realisations' => $realisations
+    ]);
+})->name('portfolio');
+
+Route::get('/services', function () {
+    $services = Service::all();
+    return view('Page.services',[
+        'services' => $services,
+    ]);
+})->name('services');
+
+Route::get('/team', function () {
+    return view('Page.team');
+})->name('team');
+
+
+//Poste
+Route::get('/Poste/create',[PosteController::class,'create'])->name('Poste.create');
+Route::get('Poste/index',[PosteController::class,'index'])->name('Poste.index');
+Route::post('Poste/store',[PosteController::class,'store'])->name('Poste.store');
+Route::get('Poste/show/{id}',[PosteController::class,'show'])->name('Poste.show');
+Route::get('Poste/edit/{id}',[PosteController::class,'edit'])->name('Poste.edit');
+Route::get('Poste/delete/{id}',[PosteController::class,'destroy'])->name('Poste.destroy');
+Route::post('Poste/update/{id}',[PosteController::class,'update'])->name('Poste.update');
+
+//Employe
+Route::get('/Employe/create',[EmployeController::class,'create'])->name('Employe.create');
+Route::get('Employe/index',[EmployeController::class,'index'])->name('Employe.index');
+Route::post('Employe/store',[EmployeController::class,'store'])->name('Employe.store');
+Route::get('Employe/show/{id}',[EmployeController::class,'show'])->name('Employe.show');
+Route::get('Employe/edit/{id}',[EmployeController::class,'edit'])->name('Employe.edit');
+Route::get('Employe/delete/{id}',[EmployeController::class,'destroy'])->name('Employe.destroy');
+Route::post('Employe/update/{id}',[EmployeController::class,'update'])->name('Employe.update');
+
+//Realisation
+Route::get('/Realisation/create',[RealisationController::class,'create'])->name('Realisation.create');
+Route::get('Realisation/index',[RealisationController::class,'index'])->name('Realisation.index');
+Route::post('Realisation/store',[RealisationController::class,'store'])->name('Realisation.store');
+Route::get('Realisation/show/{id}',[RealisationController::class,'show'])->name('Realisation.show');
+Route::get('Realisation/edit/{id}',[RealisationController::class,'edit'])->name('Realisation.edit');
+Route::get('Realisation/detail/{id}',[RealisationController::class,'detail'])->name('Realisation.detail');
+Route::get('Realisation/delete/{id}',[RealisationController::class,'destroy'])->name('Realisation.destroy');
+Route::post('Realisation/update/{id}',[RealisationController::class,'update'])->name('Realisation.update');
+
+//Service
+Route::get('/Service/create',[ServiceController::class,'create'])->name('Service.create');
+Route::get('Service/index',[ServiceController::class,'index'])->name('Service.index');
+Route::post('Service/store',[ServiceController::class,'store'])->name('Service.store');
+Route::get('Service/show/{id}',[ServiceController::class,'show'])->name('Service.show');
+Route::get('Service/edit/{id}',[ServiceController::class,'edit'])->name('Service.edit');
+Route::get('Service/delete/{id}',[ServiceController::class,'destroy'])->name('Service.destroy');
+Route::post('Service/update/{id}',[ServiceController::class,'update'])->name('Service.update');
+
+//Annonce
+Route::get('/Annonce/create',[AnnonceController::class,'create'])->name('Annonce.create');
+Route::get('Annonce/index',[AnnonceController::class,'index'])->name('Annonce.index');
+Route::post('Annonce/store',[AnnonceController::class,'store'])->name('Annonce.store');
+Route::get('Annonce/show/{id}',[AnnonceController::class,'show'])->name('Annonce.show');
+Route::get('Annonce/edit/{id}',[AnnonceController::class,'edit'])->name('Annonce.edit');
+Route::get('Annonce/delete/{id}',[AnnonceController::class,'destroy'])->name('Annonce.destroy');
+Route::post('Annonce/update/{id}',[AnnonceController::class,'update'])->name('Annonce.update');
+
+//Recrutement
+Route::get('/Recrutement/create',[RecrutementController::class,'create'])->name('Recrutement.create');
+Route::get('Recrutement/index',[RecrutementController::class,'index'])->name('Recrutement.index');
+Route::post('Recrutement/store',[RecrutementController::class,'store'])->name('Recrutement.store');
+Route::get('Recrutement/show/{id}',[RecrutementController::class,'show'])->name('Recrutement.show');
+Route::get('Recrutement/edit/{id}',[RecrutementController::class,'edit'])->name('Recrutement.edit');
+Route::get('Recrutement/delete/{id}',[RecrutementController::class,'destroy'])->name('Recrutement.destroy');
+Route::post('Recrutement/update/{id}',[RecrutementController::class,'update'])->name('Recrutement.update');
+
+//Es
+Route::get('/Es/create',[EsController::class,'create'])->name('Es.create');
+Route::get('Es/index',[EsController::class,'index'])->name('Es.index');
+Route::post('Es/store',[EsController::class,'store'])->name('Es.store');
+Route::get('Es/show/{id}',[EsController::class,'show'])->name('Es.show');
+Route::get('Es/edit/{id}',[EsController::class,'edit'])->name('Es.edit');
+Route::get('Es/delete/{id}',[EsController::class,'destroy'])->name('Es.destroy');
+Route::post('Es/update/{id}',[EsController::class,'update'])->name('Es.update');
+
+//Commentaire
+Route::get('/Commentaire/create',[CommentaireController::class,'create'])->name('Commentaire.create');
+Route::get('Commentaire/index',[CommentaireController::class,'index'])->name('Commentaire.index');
+Route::post('Commentaire/store',[CommentaireController::class,'store'])->name('Commentaire.store');
+Route::get('Commentaire/show/{id}',[CommentaireController::class,'show'])->name('Commentaire.show');
+Route::get('Commentaire/edit/{id}',[CommentaireController::class,'edit'])->name('Commentaire.edit');
+Route::get('Commentaire/delete/{id}',[CommentaireController::class,'destroy'])->name('Commentaire.destroy');
+Route::post('Commentaire/update/{id}',[CommentaireController::class,'update'])->name('Commentaire.update');
+
+//Option
+Route::get('/Option/create',[OptionController::class,'create'])->name('Option.create');
+Route::get('Option/index',[OptionController::class,'index'])->name('Option.index');
+Route::post('Option/store',[OptionController::class,'store'])->name('Option.store');
+Route::get('Option/show/{id}',[OptionController::class,'show'])->name('Option.show');
+Route::get('Option/edit/{id}',[OptionController::class,'edit'])->name('Option.edit');
+Route::get('Option/delete/{id}',[OptionController::class,'destroy'])->name('Option.destroy');
+Route::post('Option/update/{id}',[OptionController::class,'update'])->name('Option.update');
+
