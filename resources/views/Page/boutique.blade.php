@@ -101,6 +101,11 @@
             @endforeach
           </div>
         </div>
+        <div class="row">
+              <div class="col-9"></div>
+              <div class="col-3">
+                <a href=" {{route('Article.informatique')}}  "><b class="fs-3" style='color: #e02527'>Voir plus</b></a>
+        </div>
       </section>
     <!-- ***** Men Area Ends ***** -->  <br><br>
 
@@ -136,6 +141,11 @@
             @endforeach
           </div>
         </div>
+        <div class="row">
+              <div class="col-9"></div>
+              <div class="col-3">
+                <a href=" {{route('Article.bureautique')}}  "><b class="fs-3" style='color: #e02527'>Voir plus</b></a>
+        </div>
       </section><br><br>
     <!-- ***** Men Area Ends ***** -->
 
@@ -169,7 +179,13 @@
               </div>
             </div><!-- End testimonial item -->
             @endforeach
+            </div>
           </div>
+        </div>
+        <div class="row">
+              <div class="col-9"></div>
+              <div class="col-3">
+                <a href=" {{route('Article.autre')}}  "><b class="fs-3" style='color: #e02527'>Voir plus</b></a>
         </div>
       </section>
     <!-- ***** Men Area Ends ***** -->

@@ -24,7 +24,7 @@
                 <div class="card-body">
                 <h5 class="card-title" style='color: #363584'>{{$article->nom}}  <b>fcfa</b></h5>
                 <p class="card-text">  {{$article->prix}} <b>fcfa</b></p>
-                <a href="{{route('Article.detail',['id'=>$article->id])}}"  style='color: #e02527' class="">Voir </a>
+                <a href="{{route('Article.detail',['id'=>$article->id])}}"  style='color: #e02527' class="">Détais </a>
 
                 </div>
             </div>&nbsp;
