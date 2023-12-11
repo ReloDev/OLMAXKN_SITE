@@ -46,11 +46,7 @@
                                               </div>
                                             </div>
                                             <hr>
-                                            <div class="mb-3 col-12">
-                                                <span class=" fw-bold fs-6 text-secondary ">
-                                                    Pour l'enregistrement des images vérifier bien que le type de fichier est "JPG" et veuillez à respecter pour chaque image enregistrer la taille de " 600x600 " <br> La limite d'image enregistrable est trois
-                                                </span>
-                                          </div>
+                                           
                                             <div class="mb-3 col-12">
                                                 <label for="exampleFormControlInput1" class="form-label">Photo </label>
                                                 <input type="text" class="form-control" id="exampleFormControlInput1" name="description" style="height:3cm" value="{{$article->article}}" disabled>

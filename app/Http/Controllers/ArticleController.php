@@ -25,6 +25,63 @@ class ArticleController extends Controller
         ]);
     }
 
+    public function informatique()
+    {
+        $partenaires = Partenaire::all();
+        $services = Service::all();
+        $c = Partenaire::count();
+        $nbre = Notification::count();
+        $notifications = Notification::all();
+        $articles =  Article::all()->where('categorie','Equipements informatique');
+        return view('Article.informatique',[
+            'articles' => $articles,
+            'nbre' => $nbre,
+            'notifications' => $notifications,
+            'c' => $c,
+            'partenaires' => $partenaires,
+            'nbre' => $nbre,
+            'services' => $services,
+        ]);
+    }
+
+    public function bureautique()
+    {
+        $partenaires = Partenaire::all();
+        $services = Service::all();
+        $c = Partenaire::count();
+        $nbre = Notification::count();
+        $notifications = Notification::all();
+        $articles = Article::all()->where('categorie','Equipements de bureau');
+        return view('Article.bureautique',[
+            'articles' => $articles,
+            'nbre' => $nbre,
+            'notifications' => $notifications,
+            'c' => $c,
+            'partenaires' => $partenaires,
+            'nbre' => $nbre,
+            'services' => $services,
+        ]);
+    }
+
+    public function autre()
+    {
+        $partenaires = Partenaire::all();
+        $services = Service::all();
+        $c = Partenaire::count();
+        $nbre = Notification::count();
+        $notifications = Notification::all();
+        $articles = Article::all()->where('categorie','Autres');
+        return view('Article.autre',[
+            'articles' => $articles,
+            'nbre' => $nbre,
+            'notifications' => $notifications,
+            'c' => $c,
+            'partenaires' => $partenaires,
+            'nbre' => $nbre,
+            'services' => $services,
+        ]);
+    }
+
     /**
      * Show the form for creating a new resource.
      */

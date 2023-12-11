@@ -36,7 +36,7 @@
               <div class="meta-top">
                 <ul>
                   <li class="d-flex align-items-center"><i class="bi bi-person"></i> <a href="blog-details.html">{{$annonce->nom}}</a></li>
-                  <li class="d-flex align-items-center"><i class="bi bi-clock"></i> <a href="blog-details.html"><time datetime="2020-01-01">{{$annonce->created_at}}</time></a></li>
+                  <li class="d-flex align-items-center"><i class="bi bi-clock"></i> <a href="blog-details.html"><time datetime="2020-01-01">{{$annonce->updated_at->format("F d,Y")}}</time></a></li>
                   <li class="d-flex align-items-center"> </li>
                 </ul>
               </div><!-- End meta top -->
@@ -123,7 +123,7 @@
         <img src="{{asset('storage/'.$annonce->image) }}" alt="" class="flex-shrink-0">
         <div>
           <h4><a href="{{route('Annonce.detail',['id' => $annonce->id])}}">{{$annonce->titre}}</a></h4>
-          <time datetime="2020-01-01">{{$annonce->created_at}}</time>
+          <time datetime="2020-01-01">{{$annonce->updated_at->format("F d,Y")}}</time>
         </div>
       </div><!-- End recent post item-->
     @endforeach

@@ -227,7 +227,7 @@
                   {{$annonce->titre}}
                   </a>
                   </h3>
-                  <h4>{{$annonce->nom}} &amp; {{$annonce->created_at}}</h4>
+                  <h4>{{$annonce->nom}} &amp; {{$annonce->updated_at->format("F d,Y")}}</h4>
                 </div>
                 <p class="text-truncate">
                 {{substr($annonce->contenu , 0, 20)}}...

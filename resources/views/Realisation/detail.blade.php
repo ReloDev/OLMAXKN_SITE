@@ -65,7 +65,7 @@
           <ul>
             <li><strong>Catégorie</strong>: {{$realisation->services->nom_service}}</li>
             <li><strong>Client</strong>:   @if ($realisation->client == '...')  @else {{$realisation->client}} @endif</li>
-            <li><strong>Project date</strong>: {{$realisation->updated_at}}</li>
+            <li><strong>Project date</strong>: {{$realisation->updated_at->format("F d,Y")}}</li>
             <li><strong>Project URL</strong>: <a href="#">  @if ($realisation->url == '...')  @else {{$realisation->url}} @endif</a></li>
           </ul>
         </div>

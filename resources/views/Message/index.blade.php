@@ -81,6 +81,7 @@
                 <th scope="col">email</th>
                 <th scope="col">objet</th>
                 <th scope="col">message</th>
+                <th scope="col">lu</th>
                 <th scope="col">Lire</th>
                 <th scope="col">Marquer non lu</th>
             </tr>
@@ -93,6 +94,13 @@
                 <td> {{$notification->email}} </td>
                 <td> {{$notification->sujet}} </td>
                 <td> {{$notification->message}} </td>
+                <td>
+                    @if ($notification->lu == 0 )
+                        Non
+                    @else
+                        Oui
+                    @endif
+                </td>
                 <td>
                     <a href="{{route('Notification.show',['id'=>$notification->id])}}" class="btn btn-success btn-circle btn-sm">
                         <i class="fas fa-check"></i>

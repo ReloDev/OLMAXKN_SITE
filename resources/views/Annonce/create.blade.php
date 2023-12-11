@@ -38,7 +38,7 @@
                                       <div class="row">
                                           <div class="mb-3 col-12">
                                               <label for="exampleFormControlInput1" class="form-label">Contenu</label><br>
-                                              <textarea  id="" cols="75" rows="15" name="contenu" style=" border-style:inset ">
+                                              <textarea  id="" cols="75" rows="8" name="contenu" style=" border-style:inset ">
                                               </textarea>
                                           </div>
                                       </div>

@@ -24,6 +24,8 @@ use App\Models\Partenaire;
 use App\Models\Notification;
 use App\Models\Employe;
 use App\Models\Article;
+use App\Models\Poste;
+use App\Models\Es;
 
 
 /*
@@ -40,7 +42,30 @@ use App\Models\Article;
 
 
 Route::get('/dashboard', function () {
-    return view('dashboard');
+    $nbreEmploye = Employe::count();
+    $nbreService = Service::count();
+    $nbrePoste = Poste::count();
+    $nbreEs = Es::count();
+    $nbreNotification = Notification::where('lu',0)->count();
+    $nbrePublication = Annonce::count();
+    $nbreRealisation = Realisation::count();
+    $nbrePartenaire = Partenaire::count();
+    $nbreArticle = Article::count();
+    $nbre = Notification::count();
+    $notifications = Notification::orderBy('created_at', 'desc')->limit(4)->get();
+    return view('dashboard',[
+        'nbre' => $nbre,
+        'nbreEmploye' => $nbreEmploye,
+        'notifications' => $notifications,
+        'nbreService' => $nbreService,
+        'nbrePoste' => $nbrePoste,
+        'nbreEs' => $nbreEs,
+        'nbrePublication' => $nbrePublication,
+        'nbreRealisation' => $nbreRealisation,
+        'nbrePartenaire' => $nbrePartenaire,
+        'nbreNotification' => $nbreNotification,
+        'nbreArticle' => $nbreArticle,
+    ]);
 })->middleware(['auth', 'verified'])->name('dashboard');
 
 Route::middleware('auth')->group(function () {
@@ -275,9 +300,10 @@ Route::get(crypt('/contact','$5$128$'), function () {
 })->name('contact');
 
 Route::get(crypt('/boutique','$5$128$'), function () {
-    $informatiques = Article::all()->where('categorie','Equipements informatique');
-    $produits = Article::all()->where('categorie','Equipements de bureau');
-    $autres = Article::all()->where('categorie','Autres');
+    // orderBy('created_at', 'desc')->limit(4)->get();
+    $informatiques = Article::where('categorie','Equipements informatique')->limit(4)->get();
+    $produits = Article::where('categorie','Equipements de bureau')->limit(4)->get();
+    $autres = Article::where('categorie','Autres')->limit(4)->get();
     $partenaires = Partenaire::all();
     $c = Partenaire::count();
     $services = Service::all();
@@ -337,6 +363,12 @@ Route::get('Realisation/detail/{id}',[RealisationController::class,'detail'])->n
 Route::get('Annonce/detail/{id}',[AnnonceController::class,'detail'])->name('Annonce.detail');
 
 Route::get('Article/detail/{id}',[ArticleController::class,'detail'])->name('Article.detail');
+
+Route::get('Article/informatique',[ArticleController::class,'informatique'])->name('Article.informatique');
+
+Route::get('Article/bureautique',[ArticleController::class,'bureautique'])->name('Article.bureautique');
+
+Route::get('Article/autre',[ArticleController::class,'autre'])->name('Article.autre');
 
 Route::get('Service/show/{id}',[ServiceController::class,'show'])->name('Service.show');
 
