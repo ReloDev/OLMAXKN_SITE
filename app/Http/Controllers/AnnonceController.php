@@ -147,7 +147,6 @@ class AnnonceController extends Controller
             'titre' => 'required',
             'contenu' => 'required',
             'id_categorie' => 'required',
-            'image' => 'required',
         ]);
         $annonce = Annonce::whereId($id)->update($val);
         return redirect()->route('Annonce.index');

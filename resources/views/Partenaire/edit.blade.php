@@ -24,13 +24,10 @@
                                     <label for="exampleFormControlInput1" class="form-label">Désignation</label>
                                     <input type="text" class="form-control" id="exampleFormControlInput1" name="nom" value=" {{$partenaire->nom}} ">
                                 </div>
-                                <div class="mb-3">
-                                    <label for="yourUsername" class="form-label">Image </label>   <br>
-                                    <div class="input-group mb-3">
-                                                  <input type="file" class="form-control" id="inputGroupFile02" name="imagepat">
-                                                  <label class="input-group-text" for="inputGroupFile02">Upload</label>
-                                                </div>
-                                </div>                              
+                                <div class="mb-3 col-12">
+                                                <label for="exampleFormControlInput1" class="form-label">Photo </label>
+                                                <input type="text" class="form-control" id="exampleFormControlInput1" name="description" style="height:3cm" value="{{$partenaire->imagepat}}" disabled>
+                                            </div>                             
                                 <div class="mb-3 row">
                                         <div class="row-3 col-auto">
                                             <button type="submit" class="btn btn-primary mb-3">Soumettre</button>

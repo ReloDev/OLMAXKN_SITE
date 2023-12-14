@@ -71,25 +71,19 @@
                                                     Pour l'enregistrement des images vérifier bien que le type de fichier est "JPG" et veuillez à respecter pour chaque image enregistrer la taille de " 1024x768 " <br> La limite d'image enregistrable est trois
                                                 </span>
                                           </div>
+                                          
+                                          <div class="mb-3 col-12">
+                                                <label for="exampleFormControlInput1" class="form-label">Image </label>
+                                                <input type="text" class="form-control" id="exampleFormControlInput1" name="description" style="height:3cm" value="{{$realisation->pathp1}}" disabled>
+                                            </div>
                                             <div class="mb-3 col-12">
                                                 <label for="exampleFormControlInput1" class="form-label">Image </label>
-                                                <div class="input-group mb-3">
-                                                  <input type="file" class="form-control" id="inputGroupFile02" name="pathp1">
-                                                  <label class="input-group-text" for="inputGroupFile02">Upload</label>
-                                                </div>
-                                          </div>
-                                            <div class="mb-3 col-12" id="p2">
-                                                <div class="input-group mb-3">
-                                                  <input type="file" class="form-control" id="inputGroupFile02" name="pathp2" Value="null">
-                                                  <label class="input-group-text" for="inputGroupFile02">Upload</label>
-                                                </div>
-                                          </div>
-                                          <div class="mb-3 col-12" id="p3">
-                                                <div class="input-group mb-3">
-                                                  <input type="file" class="form-control" id="inputGroupFile02" name="pathp3" Value="null">
-                                                  <label class="input-group-text" for="inputGroupFile02">Upload</label>
-                                                </div>
-                                          </div>
+                                                <input type="text" class="form-control" id="exampleFormControlInput1" name="description" style="height:3cm" value="{{$realisation->pathp2}}" disabled>
+                                            </div>
+                                            <div class="mb-3 col-12">
+                                                <label for="exampleFormControlInput1" class="form-label">Image </label>
+                                                <input type="text" class="form-control" id="exampleFormControlInput1" name="description" style="height:3cm" value="{{$realisation->pathp3}}" disabled>
+                                            </div>
                                           <div class="mb-3 col-12">
                                                <div class="row">
                                                 <div class="col-4"></div>

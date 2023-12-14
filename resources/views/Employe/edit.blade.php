@@ -71,12 +71,9 @@
                                                     Pour l'enregistrement des images vérifier bien que le type de fichier est "JPG" et veuillez à respecter pour chaque image enregistrer la taille de " 600x600 " <br> La limite d'image enregistrable est trois
                                                 </span>
                                           </div>
-                                            <div class="mb-3 col-12">
+                                          <div class="mb-3 col-12">
                                                 <label for="exampleFormControlInput1" class="form-label">Photo </label>
-                                                <div class="input-group mb-3">
-                                                  <input type="file" class="form-control" id="inputGroupFile02" name="photo">
-                                                  <label class="input-group-text" for="inputGroupFile02">Upload</label>
-                                                </div>
+                                                <input type="text" class="form-control" id="exampleFormControlInput1" name="description" style="height:3cm" value="{{$employe->photo}}" disabled>
                                             </div>
                                             <hr>
                                           <div class="row">
