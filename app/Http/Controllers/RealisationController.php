@@ -54,15 +54,13 @@ class RealisationController extends Controller
             $path2 = '...';
           }
           else {
-           
-           $path2 = $request->file('pathp2')->store('pathp2', 'public');
+            $path2 = $request->file('pathp2')->store('pathp2', 'public');
           }
           if ($realisation->pathp3) {
             $path3 = '...';
           }
           else {
             $path3 = $request->file('pathp3')->store('pathp3', 'public');
-            
           }
         
         $realisation->nom_realisation = $request->nom_realisation;
